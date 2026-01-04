@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)".pub
+
 # testing
 /coverage
 
