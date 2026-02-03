@@ -1,11 +1,10 @@
-"use client";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "next-theme";
+import { Providers } from "./Providers";
 
 const inter = localFont({
   src: "./fonts/interVF.ttf",
@@ -25,12 +24,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>{children}</body>
-
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnchange>
-        <Navbar />
-        {children}
-      </ThemeProvider>
+      <body className={`${inter.className} antialiased`}>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 };
