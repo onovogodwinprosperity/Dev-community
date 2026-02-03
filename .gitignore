@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# Optional editor or OS specific files
+.vscode/
+.idea/
 eval "$(ssh-agent -s)"
 eval "$(ssh-agent -s)".pub
 
@@ -42,3 +45,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+
+
+
+
+
